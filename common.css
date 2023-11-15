@@ -1,3 +1,22 @@
+@charset "UTF-8";
+
+*{
+    padding: 0; margin: 0;
+    font-family: "맑은 고딕", sans-serif;
+    color: #333;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+li{
+    list-style: none;
+}
+a{text-align: none;}
+img{
+    display: block;
+    border: none;
+}
+
+
 .header{
     width:  1200px;
     height: 100px;
@@ -10,17 +29,69 @@
 .header h1{
     width: 200px; height: 100%;
     background-color: aliceblue;
+    display: flex;
+    justify-content: center; /*가로 가운데*/
+    align-items: center; /*세로 가운데*/
 }
+
+
 .gnb{
     width: 600px; height: 40px;
     background-color: rgb(175, 175, 175);
+}
+.gnb >ul{
+    display: flex;
+    width: 100%; height: 100%;
+}
+.gnb > ul> li{
+    width: 150px; height: 100%;
+    position: relative;
+
+}
+.mainnav{
+    display: block;
+    width: 100%; height: 100%;
+    font-size: 16px; font-weight: bold;
+    text-align: center;
+    line-height: 40px;
+}
+
+.gnb > ul> li:hover .mainnav{
+    background-color: #9365ed; color :#fff; 
+}
+.subnav{
+    display: none;
+    position: absolute;
+    left: 0; top: 40px;
+    z-index: 50;
+    width: 100%; background-color: #918e8e;
+}
+
+.subnav a{
+    display: block;
+    width: 100%; height: 40px;
+    text-align: center; line-height: 40px;
+}
+
+.subnav a:hover{
+    background-color: aquamarine; color: #fff;
 }
 
 .main{
     width:  1200px;
     height: 300px;
     margin: 0 auto;
-    background-color: rgb(255, 230, 0);}   
+    position: relative;
+    overflow: hidden;
+
+}   
+.main ul{
+    width: 100%;
+    height: 900px; 
+    position: absolute;
+    left: 0; top: 0;
+}
+
 .contents{
     width:  1200px;
     height: 200px;
@@ -32,25 +103,104 @@
 .board{
     width:  400px;
     height: 200px;
-    background-color: rgb(252, 199, 131);
+
 }
+
+.btn{
+    width: 100%; height: 50px;
+    border-bottom: 1px solid #918e8e;
+    display: flex;
+}
+
+.btn li{
+    margin: 0 10px; height: 100%; line-height: 49px;
+}
+
+.btn a{
+    display: block ; width: 100%; height: 100%;
+    font-size: 18px; font-weight: bold;
+    color: #999;
+}
+
+.btn .active{
+    color: #9365ed;
+}
+
+.bwrap{
+    width: 100%; height: 150px;
+    padding-bottom: 10px;
+}
+.notice{
+    width: 100%; height: 100%;
+    background-color: lightblue;
+}
+.gallery{
+    display: none;
+    width: 100%; height: 100%;
+    background-color: pink;
+}
+
 .banner{
     width:  400px;
     height: 200px;
-    background-color: rgb(255, 175, 70);
+
+}
+
+.banner a{
+    display: flex;
+    width: 100%; height: 100%;
+    background-color: pink;
+    background-image: url(../A-01유형/images/banner.png);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner h2{
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 .now{
     width:  400px;
     height: 200px;
-    background-color: rgb(253, 148, 10);
+}
+
+.now a{
+    display: flex;
+    width: 100%; height: 100%;
+    background-color: aqua;
+    background-image: url(../A-01유형/images/now.png);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 
+.now h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.8);
+}
+
+.now p{
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.8);
+}
+
+.now span{
+    color: #fff; font-size: 16px;
+    padding: 3px 10px; border: 1px solid #fff;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.8);
+}
 .footer{
     width:  1200px;
     height: 100px;
     margin: 0 auto;
-    background-color: rgb(193, 197, 255);
+    background-color: rgb(143, 143, 143);
     display: flex;
     justify-content: space-between;
     align-items: center;}    
@@ -58,13 +208,23 @@
 .footer h1{
     width:  200px;
     height: 100px;
-    background-color: rgb(129, 207, 252);
+    display: flex;
+    justify-content: center; /*가로 가운데*/
+    align-items: center; /*세로 가운데*/
 }
 
 .footer p{
-    background-color: rgb(72, 185, 250);
+
+    color: #fff;
 }
 
 .sns{
-    background-color: rgb(21, 169, 255);
+    display: flex;
+}
+
+.sns li{
+    margin: 0 10px; /*앞상하 뒷좌우*/
+}
+.sns a{
+    color: #ccc;
 }
